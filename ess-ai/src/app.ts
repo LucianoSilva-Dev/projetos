@@ -12,6 +12,7 @@ import fastifyCors from '@fastify/cors';
 
 import { appErrorHandler } from './shared/plugins/appErrorHandler';
 
+import { EssayRoutes } from './features/Essay/Routes';
 import { AuthRoutes } from './features/Auth/Routes';
 import { appConfig } from './config/app';
 
@@ -39,6 +40,7 @@ class App {
 
   private routes() {
     this.app.register(AuthRoutes, { prefix: '/auth', });
+    this.app.register(EssayRoutes, { prefix: '/essay', });
   }
 }
 

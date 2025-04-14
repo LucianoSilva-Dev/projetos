@@ -1,6 +1,6 @@
-import { jsonSchemaTransform } from "fastify-type-provider-zod";
-import type { FastifyDynamicSwaggerOptions } from "@fastify/swagger";
-import type { FastifySwaggerUiOptions } from "@fastify/swagger-ui";
+import { jsonSchemaTransform } from 'fastify-type-provider-zod';
+import type { FastifyDynamicSwaggerOptions } from '@fastify/swagger';
+import type { FastifySwaggerUiOptions } from '@fastify/swagger-ui';
 
 export const fastifySwaggerConfig: FastifyDynamicSwaggerOptions = {
   openapi: {
@@ -10,11 +10,22 @@ export const fastifySwaggerConfig: FastifyDynamicSwaggerOptions = {
     },
     tags: [
       { name: 'Auth', description: 'Authentication related end-points' },
-    ]
+      { name: 'Essay', description: 'Essay related end-points' },
+    ],
+    components: {
+      securitySchemes: {
+        jwtAuth: {
+          type: 'http',
+          scheme: 'bearer',
+          bearerFormat: 'JWT',
+          description: 'Enter JWT token.',
+        },
+      },
+    },
   },
-  transform: jsonSchemaTransform
-}
+  transform: jsonSchemaTransform,
+};
 
 export const fastifySwaggerUiConfig: FastifySwaggerUiOptions = {
   routePrefix: '/docs',
-}
+};

@@ -3,7 +3,7 @@
   "version": "1.0.0",
   "description": "",
   "main": "src/server.ts",
- "scripts": {
+  "scripts": {
     "dev": "tsx watch src/server.ts",
     "debug": "tsx watch --inspect src/server.ts"
   },
@@ -23,6 +23,7 @@
     "fastify-plugin": "^5.0.1",
     "fastify-type-provider-zod": "^4.0.2",
     "mongoose": "^8.12.1",
+    "openai": "^4.93.0",
     "tsx": "^4.19.3",
     "zod": "^3.24.2"
   },
@@ -30,10 +31,10 @@
     "typescript": "^5.0.0"
   },
   "devDependencies": {
-    "@types/node": "^22.13.14",
     "@biomejs/biome": "^1.9.4",
     "@types/bcrypt": "^5.0.2",
     "@types/bun": "latest",
-    "@types/mongoose": "^5.11.97"
+    "@types/mongoose": "^5.11.97",
+    "@types/node": "^22.13.14"
   }
 }
